@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Excalidraw Clone</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <header class="mt-5">
+      <div
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <div
+          style="
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+          "
+        >
+          <nav class="navbar">
+            <div class="container-fluid">
+              <button
+                class="navbar-toggler"
+                id="top-left"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-2 mb-2">
+                  <li class="nav-item mb-2 d-flex justify-content-between">
+                    <a href="#">Open</a>
+                    <p class="ms-2">Ctrl+O</p>
+                  </li>
+                  <li class="nav-item mb-2 d-flex justify-content-start">
+                    <a href="#">Save to...</a>
+                  </li>
+                  <li class="nav-item mb-2 d-flex justify-content-start">
+                    <a href="#">Export image...</a>
+                    <p class="ms-2">Ctrl+Shift+E</p>
+                  </li>
+                  <li class="nav-item mb-2 d-flex justify-content-start">
+                    <a href="#">Live collaboration</a>
+                  </li>
+                  <li class="nav-item mb-2 d-flex justify-content-start">
+                    <a href="#">Help</a>
+                  </li>
+                  <li class="nav-item mb-2 d-flex justify-content-start">
+                    <a href="#">Reset the canvas</a>
+                  </li>
+                  <li class="nav-item mb-2 d-flex justify-content-start">
+                    <a href="#">Excalidraw+</a>
+                  </li>
+                  <li class="nav-item mb-2 d-flex justify-content-start">
+                    <a href="#">Github</a>
+                  </li>
+                  <li class="nav-item mb-2 d-flex justify-content-start">
+                    <a href="#">Discord</a>
+                  </li>
+                  <li class="nav-item mb-2 d-flex justify-content-start">
+                    <a href="#">Twitter</a>
+                  </li>
+                  <li class="nav-item mb-2 d-flex justify-content-start">
+                    <a href="#">Dark Mode</a>
+                    <p>Shift+Alt+D</p>
+                  </li>
+                  <li class="nav-item mb-2">
+                    <form class="d-flex" role="search">
+                      <select name="language" id="language" class="form-select">
+                        <option value="english" selected>English</option>
+                        <option value="hindi">Hindi</option>
+                        <option value="bahasa-indonesia">
+                          Bahasa Indonesia
+                        </option>
+                        <option value="catalia">Catalia</option>
+                        <option value="deutsch">Deutsch</option>
+                        <option value="espanol">Espanol</option>
+                        <option value="euskara">Euskara</option>
+                        <option value="francais">Francais</option>
+                        <option value="galego">Galego</option>
+                        <option value="italiano">italiano</option>
+                        <option value="kurdi">Kurdi</option>
+                        <option value="latviesu">Latviesu</option>
+                        <option value="norsk-bokmal">Norsk bokmal</option>
+                        <option value="occitan">Occitan</option>
+                        <option value="polski">Polski</option>
+                        <option value="portugues">Portugues</option>
+                        <option value="portugues-brasileiro">
+                          Portugues Brasileiro
+                        </option>
+                        <option value="romana">Romana</option>
+                        <option value="slovencina">Slovencina</option>
+                        <option value="slovenscina">Slovenscina</option>
+                        <option value="suomi">Suomi</option>
+                        <option value="svenska">Svenska</option>
+                        <option value="taqbaylit">Taqbaylit</option>
+                        <option value="turkce">Turkce</option>
+                        <option value="cesky">Cesky</option>
+                        <option value="eyynvika">Eyynvika</option>
+                        <option value="pyccknn">Pyccknn</option>
+                        <option value="ykpaihcbka">Ykpaihcbka</option>
+                      </select>
+                    </form>
+                  </li>
+                  <li class="nav-item mb-2">
+                    <form>
+                      <label for="canvas-background" class="form-label"
+                        >Canvas Background</label
+                      >
+                      <div class="radio-container">
+                        <input
+                          type="radio"
+                          id="radio1"
+                          name="background"
+                          value="color1"
+                        />
+                        <label for="radio1" class="radio-label"></label>
+                        <input
+                          type="radio"
+                          id="radio2"
+                          name="background"
+                          value="color2"
+                        />
+                        <label for="radio2" class="radio-label"></label>
+                        <input
+                          type="radio"
+                          id="radio3"
+                          name="background"
+                          value="color3"
+                        />
+                        <label for="radio3" class="radio-label"></label>
+                        <input
+                          type="radio"
+                          id="radio4"
+                          name="background"
+                          value="color4"
+                        />
+                        <label for="radio4" class="radio-label"></label>
+                        <input
+                          type="radio"
+                          id="radio5"
+                          name="background"
+                          value="color5"
+                        />
+                        <label for="radio5" class="radio-label"></label>
+                      </div>
+                    </form>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div
+          class="mx-5"
+          style="display: flex; justify-content: center; align-items: center"
+          id="top-center"
+        >
+          <nav class="navbar">
+            <div class="container-fluid">
+              <ul>
+                <li class="pe-4 me-2 border-end border-dark">
+                  <a href="#">
+                    <img
+                      src="./Images/padlock.png"
+                      alt="padlock image"
+                      width="30"
+                      height="30"
+                    />
+                  </a>
+                </li>
+                <li class="p-2 mx-2">
+                  <a href="#">
+                    <img
+                      src="./Images/hand.png"
+                      alt="hand image"
+                      width="30"
+                      height="30"
+                    />
+                  </a>
+                </li>
+                <li class="p-2 mx-2">
+                  <a href="#">
+                    <img
+                      src="./Images/cursor.png"
+                      alt="cursor image"
+                      width="30"
+                      height="30"
+                    />
+                  </a>
+                </li>
+                <li class="p-2 mx-2">
+                  <a href="#">
+                    <img
+                      src="./Images/square.png"
+                      alt="square image"
+                      width="30"
+                      height="30"
+                    />
+                  </a>
+                </li>
+                <li class="p-2 mx-2">
+                  <a href="#">
+                    <img
+                      src="./Images/rhombus.png"
+                      alt="rhombus image"
+                      width="30"
+                      height="30"
+                    />
+                  </a>
+                </li>
+                <li class="p-2 mx-2">
+                  <a href="#">
+                    <img
+                      src="./Images/circle.png"
+                      alt="circle image"
+                      width="30"
+                      height="30"
+                    />
+                  </a>
+                </li>
+                <li class="p-2 mx-2">
+                  <a href="#">
+                    <img
+                      src="./Images/right-arrow.png"
+                      alt="right-arrow image"
+                      width="30"
+                      height="30"
+                    />
+                  </a>
+                </li>
+                <li class="p-2 mx-2">
+                  <a href="#">
+                    <img
+                      src="./Images/line.png"
+                      alt="line image"
+                      width="30"
+                      height="30"
+                    />
+                  </a>
+                </li>
+                <li class="p-2 mx-2">
+                  <a href="#">
+                    <img
+                      src="./Images/text.png"
+                      alt="text image"
+                      width="30"
+                      height="30"
+                    />
+                  </a>
+                </li>
+                <li class="p-2 mx-2">
+                  <a href="#">
+                    <img
+                      src="./Images/gallery.png"
+                      alt="gallery image"
+                      width="30"
+                      height="30"
+                    />
+                  </a>
+                </li>
+                <li class="p-2 mx-2">
+                  <a href="#">
+                    <img
+                      src="./Images/eraser.png"
+                      alt="eraser image"
+                      width="30"
+                      height="30"
+                    />
+                  </a>
+                </li>
+                <li class="p-2 px-4 mx-2 border-start border-dark">
+                  <a href="#">
+                    <img
+                      src="./Images/shapes.png"
+                      alt="shapes image"
+                      width="30"
+                      height="30"
+                    />
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div
+          style="display: flex; justify-content: flex-end; align-items: center"
+          id="top-right"
+        >
+          <nav class="navbar">
+            <div class="container-fluid">
+              <ul>
+                <li class="pe-4 me-2 border-end border-dark">
+                  <a href="#">
+                    <img
+                      src="./Images/people.png"
+                      alt="people image"
+                      width="30"
+                      height="30"
+                    />
+                  </a>
+                </li>
+                <li class="p-2 mx-2">
+                  <a href="#">
+                    <img
+                      src="./Images/book.png"
+                      alt="book image"
+                      width="30"
+                      height="30"
+                      class="me-2"
+                    />
+                    Library
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section>
+        <h1 class="fw-bold fst-italic">
+          <img
+            src="./Images/apple-touch-icon.png"
+            alt="excalidraw main logo"
+            width="80"
+            height="80"
+          />
+          EXCALIDRAW
+        </h1>
+        <p class="text-body-tertiary text-center fs-5 mt-3">
+          All your data is saved locally in your browser.
+        </p>
+        <div class="list-group">
+          <a href="#" class="list-group-item list-group-item-action border-0"
+            >Open</a
+          >
+          <a href="#" class="list-group-item list-group-item-action border-0"
+            >Help</a
+          >
+          <a href="#" class="list-group-item list-group-item-action border-0"
+            >Live collaboration...</a
+          >
+          <a href="#" class="list-group-item list-group-item-action border-0"
+            >Try Excalidraw Plus!</a
+          >
+        </div>
+      </section>
+    </main>
+    <footer class="mb-5">
+      <section class="d-flex justify-content-between align-items-center">
+        <div class="d-flex" id="bottom-left">
+          <div
+            class="d-flex justify-content-between align-items-center border rounded-4 p-2 mx-2 me-5"
+          >
+            <img
+              src="./Images/minus.png"
+              alt="minus image"
+              width="30"
+              height="30"
+              class="me-3"
+            />
+            <img
+              src="./Images/number-10.png"
+              alt="number-10 image"
+              width="30"
+              height="30"
+            />
+            <img
+              src="./Images/addition.png"
+              alt="addition image"
+              width="30"
+              height="30"
+              class="ms-3"
+            />
+          </div>
+          <div
+            class="d-flex justify-content-start align-items-center border rounded-4 p-2"
+          >
+            <img
+              src="./Images/undo.png"
+              alt="undo image"
+              width="30"
+              height="30"
+              class="me-2"
+            />
+            <img
+              src="./Images/redo.png"
+              alt="redo image"
+              width="30"
+              height="30"
+            />
+          </div>
+        </div>
+        <div id="bottom-right">
+          <img
+            src="./Images/insurance.png"
+            alt="insurance image"
+            width="30"
+            height="30"
+            class="me-2"
+          />
+          <img
+            src="./Images/question.png"
+            alt="question image"
+            width="30"
+            height="30"
+          />
+        </div>
+      </section>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
